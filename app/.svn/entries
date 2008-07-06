@@ -1,0 +1,40 @@
+8
+
+dir
+16
+http://svn.assembla.com/svn/peekinto/app
+http://svn.assembla.com/svn/peekinto
+
+
+
+2008-07-05T01:16:03.841479Z
+16
+karthikc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+fbf1ad31-3caa-4afa-b5b4-094426959cba
+
+helpers
+dir
+
+models
+dir
+
+controllers
+dir
+
+views
+dir
+

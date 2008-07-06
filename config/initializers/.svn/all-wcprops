@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/svn/peekinto/!svn/ver/16/config/initializers
+END
+inflections.rb
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/svn/peekinto/!svn/ver/1/config/initializers/inflections.rb
+END
+mechanize_extensions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/peekinto/!svn/ver/12/config/initializers/mechanize_extensions.rb
+END
+hpricot_extensions.rb
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/peekinto/!svn/ver/6/config/initializers/hpricot_extensions.rb
+END
+mime_types.rb
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/peekinto/!svn/ver/1/config/initializers/mime_types.rb
+END

@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Peek Into Campfire</title>
+  <link href="<%=account.absolute_url('/stylesheets/screen.css')%>" media="all" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 6]>
+      <style type="text/css">
+        @import url("<%=account.absolute_url('/stylesheets/screen-ie.css')%>");
+      </style>
+    <![endif]-->
+    <!--[if IE 7]>
+      <style type="text/css">
+        @import url("<%=account.absolute_url('/stylesheets/screen-ie-7.css')%>");
+      </style>
+    <![endif]-->
+  
+    <!--[if lte IE 6]>
+      <style type="text/css">
+        @import url("<%=account.absolute_url('/stylesheets/transcript-ie.css')%>");
+      </style>
+    <![endif]-->
+
+    <!--[if IE 7]>
+      <style type="text/css">
+        @import url("<%=account.absolute_url('/stylesheets/transcript-ie-7.css')%>");
+      </style>
+    <![endif]-->    
+  <link href="<%=account.absolute_url('/stylesheets/print.css')%>" media="print" rel="stylesheet" type="text/css" />
+  <link href="<%=account.absolute_url('/stylesheets/blue.css')%>" media="screen" rel="stylesheet" title="Theme" type="text/css" />
+
+  <%=stylesheet_link_tag 'peek' %>
+  <%=javascript_include_tag 'prototype' %>
+  <script type="text/javascript" charset="utf-8">
+    Event.observe(window, 'load', function() {
+      Event.observe('days', 'submit', function() { location.href = "/peek/" + $('days_input').value });
+    });
+  </script>
+</head>
+
+<body class="transcript">
+  <div id="Wrapper">
+    <form action="#" id="days" onsubmit="return false">  
+      Transcripts from the past  
+      <input type="text" name="days" value="<%=params[:days]%>" id="days_input" size='3'/> 
+      day<%='s' unless params[:days] == '1'%> 
+      <input type="submit" value="Fetch" id="fetch"/> 
+    </form>
+  	<div id="Container">
+      <div class="Left">
+        <div class="col">
+          <a id="logout" href="/logout">Logout</a>
+          <div id="peek_message">
+            Messages posted on <a href="<%=account.url%>"><%=account.name%></a>&nbsp;
+            since <span class="highlight"><%=account.format_date(@date)%></span> 
+            <%if account.timezone %> in the <span class="highlight"><%=account.timezone.name%></span> timezone <% end %>
+          </div>
+          <%@rooms.each do |room| %>
+            
+            <div class="room_section">
+              <h1><%= room.name %></h1>
+              <p class="people"><span class="people_label">People in these transcripts - </span>&nbsp;<%=room.people%></p>
+              <p class="adjacent_transcripts"> ← <%= room.previous_transcript %></p>
+              <%room.transcripts.each do |transcript| %>
+                <h3><%= transcript.humanized_date %></h3> 
+                <div id="chat-wrapper"><table class="chat"><tbody id="chat"><%= transcript.messages %></tbody></table></div>
+              <%end%>
+            </div>
+          
+          <%end%>
+        </div>
+        <div class="bottom">&nbsp;</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
