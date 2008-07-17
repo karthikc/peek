@@ -2,10 +2,12 @@
   width: 550px;
 }
 #peekinto {
+  float: left;
   color: #009900;
   font-weight: bold;
   font-style: italic;
   font-size: 15px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 #peekinto_warning {
@@ -37,3 +39,4 @@
   color: #666666;
   font-size: 11px;
 }
+

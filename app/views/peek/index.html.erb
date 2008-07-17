@@ -1,8 +1,3 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-
-<head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <title>Peek Into Campfire</title>
   <link href="<%=account.absolute_url('/stylesheets/screen.css')%>" media="all" rel="stylesheet" type="text/css" />
     <!--[if lte IE 6]>
@@ -54,7 +49,7 @@
           <div id="peek_message">
             Messages posted on <a href="<%=account.url%>"><%=account.name%></a>&nbsp;
             since <span class="highlight"><%=account.format_date(@date)%></span> 
-            <%if account.timezone %> in the <span class="highlight"><%=account.timezone.name%></span> timezone <% end %>
+            <%if account.timezone %> shown in the <span class="highlight"><%=account.timezone.name%></span> timezone <% end %>
           </div>
           <%@rooms.each do |room| %>
             
@@ -71,8 +66,10 @@
           <%end%>
         </div>
         <div class="bottom">&nbsp;</div>
+        <div id="peekinto_footer">
+          <a href="http://www.campfirenow.com/">Campfire</a> is a product of 
+          <a href="http://www.37signals.com/">37signals</a>, LLC and a reserved trademark.
+        </div>
       </div>
     </div>
   </div>
-</body>
-</html>
