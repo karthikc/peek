@@ -1,55 +1,0 @@
-8
-
-dir
-16
-http://svn.assembla.com/svn/peekinto/test
-http://svn.assembla.com/svn/peekinto
-
-
-
-2008-06-08T06:15:19.952077Z
-1
-karthikc
-
-
-svn:special svn:externals svn:needs-lock
-
-
-
-
-
-
-
-
-
-
-
-fbf1ad31-3caa-4afa-b5b4-094426959cba
-
-unit
-dir
-
-test_helper.rb
-file
-
-
-
-
-2008-06-08T06:16:12.000000Z
-30478106e9df8977e79fc045df799e29
-2008-06-08T06:15:19.952077Z
-1
-karthikc
-
-functional
-dir
-
-integration
-dir
-
-fixtures
-dir
-
-mocks
-dir
-
